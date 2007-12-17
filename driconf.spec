@@ -11,7 +11,6 @@ Patch: driconf-0.9.0-glinfo.patch
 Patch1: driconf-0.9.1-desktopentry.patch
 License: GPL
 Group: System/Configuration/Hardware
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: python-devel
 Requires: gnome-python
 Requires: xdriinfo
