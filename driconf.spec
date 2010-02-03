@@ -1,6 +1,6 @@
 %define name driconf
 %define version 0.9.1
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: DRI Configuration GUI
 Name: %{name}
@@ -16,7 +16,7 @@ BuildRequires: python-devel
 Requires: gnome-python
 Requires: xdriinfo
 #gw for glinfo
-Requires: mesa-demos
+Requires: glxinfo
 BuildArch: noarch
 Url: http://dri.sourceforge.net/cgi-bin/moin.cgi/DriConf
 
