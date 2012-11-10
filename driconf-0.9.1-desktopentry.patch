@@ -1,0 +1,12 @@
+--- driconf-0.9.1/driconf.desktop~	2006-09-18 03:41:45.000000000 +0200
++++ driconf-0.9.1/driconf.desktop	2007-05-15 12:47:21.000000000 +0200
+@@ -3,7 +3,7 @@
+ Name=3D Acceleration
+ Comment=Change 3D Acceleration options
+ Exec=driconf
+-Icon=/usr/local/share/driconf/driconf-icon.png
++Icon=driconf
+ Type=Application
+-Categories=GNOME;Application;Settings;AdvancedSettings;
++Categories=X-MandrivaLinux-System-Configuration-Hardware;Settings;HardwareSettings;
+ StartupNotify=true

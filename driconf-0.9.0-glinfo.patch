@@ -1,0 +1,34 @@
+--- driconf-0.9.0/dri.py~	2006-01-25 06:19:45.000000000 +0100
++++ driconf-0.9.0/dri.py	2006-05-28 23:02:20.000000000 +0200
+@@ -339,18 +339,18 @@
+         if dot != -1:
+             dpy = dpy[:dot]
+         dpyStr = "-display " + dpy + "." + str(screen)
+-        infopipe = os.popen ("glxinfo " + dpyStr, "r")
++        infopipe = os.popen ("glinfo " + dpyStr, "r")
+         glxInfo = infopipe.read()
+         result = infopipe.close()
+         if result != None:
+             signal = result & 0xff
+             status = result >> 8
+             if signal != 0:
+-                raise DRIError ("glxinfo killed by signal " + signal + ".")
++                raise DRIError ("glinfo killed by signal " + signal + ".")
+             elif status == 127:
+-                raise DRIError ("glxinfo not found.")
++                raise DRIError ("glinfo not found.")
+             else:
+-                raise DRIError ("glxinfo returned with non-zero exit code.")
++                raise DRIError ("glinfo returned with non-zero exit code.")
+         else:
+             # Parse
+             vMatch = re.search ("^OpenGL vendor string: (.*)$", glxInfo, re.M)
+@@ -358,7 +358,7 @@
+             self.vendor = vMatch and vMatch.group(1)
+             self.renderer = rMatch and rMatch.group(1)
+             if not self.vendor or not self.renderer:
+-                raise DRIError ("unable to parse glxinfo output.")
++                raise DRIError ("unable to parse glinfo output.")
+ 
+ class ScreenInfo:
+     """ References a DriverInfo object with the real config info. """
