@@ -1,6 +1,6 @@
 %define name driconf
 %define version 0.9.1
-%define release %mkrel 5
+%define release 6
 
 Summary: DRI Configuration GUI
 Name: %{name}
@@ -13,7 +13,7 @@ License: GPL
 Group: System/Configuration/Hardware
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: python-devel
-Requires: gnome-python
+Requires: pygtk2.0
 Requires: xdriinfo
 #gw for glinfo
 Requires: glxinfo
