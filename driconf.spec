@@ -1,6 +1,6 @@
 %define name driconf
 %define version 0.9.1
-%define release 6
+%define release 7
 
 Summary: DRI Configuration GUI
 Name: %{name}
