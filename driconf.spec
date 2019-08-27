@@ -12,7 +12,7 @@ Patch1: driconf-0.9.1-desktopentry.patch
 License: GPL
 Group: System/Configuration/Hardware
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: python2-devel
+BuildRequires: pkgconfig(python2)
 Requires: pygtk2.0
 Requires: xdriinfo
 #gw for glinfo
@@ -26,44 +26,29 @@ comfortable GUI for changing the OpenGL settings.
 
 %prep
 %setup -q
-%patch -p1
-%patch1 -p1 -b .desktopentry
+%autopatch -p1
 
 %build
-python2 setup.py build 
+%{__python2} setup.py build
 
 %install
-rm -rf %buildroot %name.lang
-python setup.py install --root=$RPM_BUILD_ROOT --prefix=%_prefix --install-purelib=%_datadir/%name
+%{__python2} setup.py install --root=$RPM_BUILD_ROOT --prefix=%_prefix --install-purelib=%_datadir/%name
 
 install -D -m 644 %name.desktop $RPM_BUILD_ROOT%{_datadir}/applications/%name.desktop
 install -D -m 644 driconf-icon.png %buildroot%_datadir/icons/hicolor/24x24/apps/%name.png
 
 %find_lang %name
+
 #fix paths
 perl -pi -e "s^/usr/local/lib/driconf^%_datadir/%name^" %buildroot%_bindir/%name
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%update_icon_cache hicolor
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%clean_icon_cache hicolor
-%endif
 
 %files -f %name.lang
-%defattr(-,root,root)
 %doc README
 %_bindir/%name
 %_datadir/applications/*
-%_datadir/%name
+%_datadir/%name/
 %_datadir/icons/hicolor/24x24/apps/%name.png
+
 
 
 %changelog
