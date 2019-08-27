@@ -1,11 +1,7 @@
-%define name driconf
-%define version 0.9.1
-%define release 7
-
 Summary: DRI Configuration GUI
-Name: %{name}
-Version: %{version}
-Release: %{release}
+Name: driconf
+Version: 0.9.1
+Release: 8
 Source0: http://people.freedesktop.org/~fxkuehl/driconf/%{name}-%{version}.tar.bz2
 Patch: driconf-0.9.0-glinfo.patch
 Patch1: driconf-0.9.1-desktopentry.patch
