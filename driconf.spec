@@ -12,7 +12,7 @@ Patch1: driconf-0.9.1-desktopentry.patch
 License: GPL
 Group: System/Configuration/Hardware
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: python-devel
+BuildRequires: python2-devel
 Requires: pygtk2.0
 Requires: xdriinfo
 #gw for glinfo
@@ -30,7 +30,7 @@ comfortable GUI for changing the OpenGL settings.
 %patch1 -p1 -b .desktopentry
 
 %build
-python setup.py build 
+python2 setup.py build 
 
 %install
 rm -rf %buildroot %name.lang
@@ -67,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Tue Dec 06 2011 Götz Waschk <waschk@mandriva.org> 0.9.1-5mdv2012.0
+* Tue Dec 06 2011 GÃ¶tz Waschk <waschk@mandriva.org> 0.9.1-5mdv2012.0
 + Revision: 738102
 - yearly rebuild
 
@@ -93,7 +93,7 @@ rm -rf $RPM_BUILD_ROOT
   + Thierry Vignaud <tv@mandriva.org>
     - kill re-definition of %%buildroot on Pixel's request
 
-* Tue May 15 2007 Götz Waschk <waschk@mandriva.org> 0.9.1-1mdv2008.0
+* Tue May 15 2007 GÃ¶tz Waschk <waschk@mandriva.org> 0.9.1-1mdv2008.0
 + Revision: 26895
 - fix upstream menu
 - drop legacy menu
@@ -101,26 +101,26 @@ rm -rf $RPM_BUILD_ROOT
 
 
 
-* Tue May 15 2007 G�tz Waschk <waschk@mandriva.org> 0.9.1-1mdv2008.0
+* Tue May 15 2007 Götz Waschk <waschk@mandriva.org> 0.9.1-1mdv2008.0
 - fix URL
 - new version
 
-* Wed Aug  2 2006 G�tz Waschk <waschk@mandriva.org> 0.9.0-4mdv2007.0
+* Wed Aug  2 2006 Götz Waschk <waschk@mandriva.org> 0.9.0-4mdv2007.0
 - xdg menu
 
-* Sun May 28 2006 G�tz Waschk <waschk@mandriva.org> 0.9.0-3mdv2007.0
+* Sun May 28 2006 Götz Waschk <waschk@mandriva.org> 0.9.0-3mdv2007.0
 - fix menu and use glinfo instead of glxinfo
 
-* Sun May 28 2006 G�tz Waschk <waschk@mandriva.org> 0.9.0-2mdv2007.0
+* Sun May 28 2006 Götz Waschk <waschk@mandriva.org> 0.9.0-2mdv2007.0
 - fix deps
 
-* Mon Jan 30 2006 Götz Waschk <waschk@mandriva.org> 0.9.0-1mdk
+* Mon Jan 30 2006 GÃ¶tz Waschk <waschk@mandriva.org> 0.9.0-1mdk
 - New release 0.9.0
 - use mkrel
 
-* Fri Sep  2 2005 G�tz Waschk <waschk@mandriva.org> 0.2.7-1mdk
+* Fri Sep  2 2005 Götz Waschk <waschk@mandriva.org> 0.2.7-1mdk
 - update file list
 - New release 0.2.7
 
-* Mon Dec  6 2004 G�tz Waschk <waschk@linux-mandrake.com> 0.2.2-1mdk
+* Mon Dec  6 2004 Götz Waschk <waschk@linux-mandrake.com> 0.2.2-1mdk
 - initial package
