@@ -14,7 +14,7 @@ Requires: xdriinfo
 #gw for glinfo
 Requires: glxinfo
 BuildArch: noarch
-Url: http://dri.sourceforge.net/cgi-bin/moin.cgi/DriConf
+Url: https://dri.sourceforge.net/cgi-bin/moin.cgi/DriConf
 
 %description
 DRIConf is the first configuration GUI for DRI. It provides a
